@@ -11,11 +11,12 @@ from pydantic import BaseModel
 from sqlalchemy import case as sa_case, func
 from sqlalchemy.orm import Session
 
-from database import engine, get_db, Base
+from database import engine, get_db, Base, verify_connection
 from models import CallRecord, IngestLog
 from ingest import ingest_csv
 from scheduler import start_scheduler
 from config import CORS_ORIGINS, MAX_UPLOAD_BYTES
+from threecx_poller import get_cached_active_calls
 
 
 # ---------------------------------------------------------------------------
@@ -23,6 +24,7 @@ from config import CORS_ORIGINS, MAX_UPLOAD_BYTES
 # ---------------------------------------------------------------------------
 
 def init_db():
+    verify_connection()
     Base.metadata.create_all(bind=engine)
 
 
@@ -151,6 +153,18 @@ def _period_window(period: str):
 @app.get("/api/v1/health")
 def health():
     return {"status": "ok"}
+
+
+@app.get("/api/v1/live/activecalls")
+def live_active_calls():
+    """
+    Returns the in-memory cache of currently active calls.
+
+    The cache is updated every THREECX_POLL_INTERVAL_SECONDS by the
+    scheduler. If 3CX API is not configured, returns an empty list.
+    The frontend polls this every 10-15 seconds to drive the live wall.
+    """
+    return get_cached_active_calls()
 
 
 @app.post("/api/v1/upload", response_model=UploadResponse)

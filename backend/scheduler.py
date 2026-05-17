@@ -9,10 +9,17 @@ from datetime import datetime, timedelta
 
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from config import WATCHED_FOLDER, POLL_INTERVAL_SECONDS, RETENTION_DAYS
+from config import (
+    WATCHED_FOLDER,
+    POLL_INTERVAL_SECONDS,
+    RETENTION_DAYS,
+    THREECX_ENABLED,
+    THREECX_POLL_INTERVAL_SECONDS,
+)
 from database import SessionLocal
 from ingest import ingest_csv
 from models import IngestLog, CallRecord
+from threecx_poller import poll_live_calls, poll_call_history
 
 logger = logging.getLogger(__name__)
 
@@ -136,9 +143,32 @@ def start_scheduler() -> BackgroundScheduler:
         id="retention_purge",
         replace_existing=True,
     )
+
+    # 3CX live jobs are only scheduled when API credentials are configured.
+    if THREECX_ENABLED:
+        scheduler.add_job(
+            poll_live_calls,
+            "interval",
+            seconds=THREECX_POLL_INTERVAL_SECONDS,
+            id="threecx_live",
+            replace_existing=True,
+        )
+        scheduler.add_job(
+            poll_call_history,
+            "interval",
+            minutes=5,
+            id="threecx_history",
+            replace_existing=True,
+        )
+
     scheduler.start()
     logger.info(
         "[scheduler] folder_scanner every %ds, retention_purge at 02:00 daily.",
         POLL_INTERVAL_SECONDS,
     )
+    if THREECX_ENABLED:
+        logger.info(
+            "[scheduler] 3CX API polling enabled - live calls every %ds, CDR every 5min.",
+            THREECX_POLL_INTERVAL_SECONDS,
+        )
     return scheduler

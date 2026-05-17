@@ -40,7 +40,11 @@ def _read_csv(content: bytes) -> tuple[list[str], list[dict[str, str]]]:
     worry about it.
     """
     text_content = content.decode("utf-8-sig").strip()
-    reader = csv.DictReader(io.StringIO(text_content))
+    try:
+        dialect = csv.Sniffer().sniff(text_content[:4096], delimiters=",;\t|")
+    except csv.Error:
+        dialect = csv.excel
+    reader = csv.DictReader(io.StringIO(text_content), dialect=dialect)
     headers = [h.strip() for h in (reader.fieldnames or [])]
     rows = [
         {k.strip(): (v.strip() if v else "") for k, v in row.items() if k}

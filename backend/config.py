@@ -40,3 +40,13 @@ POWERBI_CLIENT_ID: str = os.getenv("POWERBI_CLIENT_ID", "")
 POWERBI_CLIENT_SECRET: str = os.getenv("POWERBI_CLIENT_SECRET", "")
 POWERBI_WORKSPACE_ID: str = os.getenv("POWERBI_WORKSPACE_ID", "")
 POWERBI_DATASET_ID: str = os.getenv("POWERBI_DATASET_ID", "")
+
+THREECX_HOST: str = os.getenv("THREECX_HOST", "")
+THREECX_CLIENT_ID: str = os.getenv("THREECX_CLIENT_ID", "")
+THREECX_CLIENT_SECRET: str = os.getenv("THREECX_CLIENT_SECRET", "")
+THREECX_POLL_INTERVAL_SECONDS: int = int(os.getenv("THREECX_POLL_INTERVAL_SECONDS", "15"))
+
+# Automatically disabled if credentials are not provided.
+# This means the app works in CSV-only mode without any 3CX config.
+THREECX_ENABLED: bool = bool(THREECX_HOST and THREECX_CLIENT_ID and THREECX_CLIENT_SECRET)
+
