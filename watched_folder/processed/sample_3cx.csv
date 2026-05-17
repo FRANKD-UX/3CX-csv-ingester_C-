@@ -1,0 +1,48 @@
+Call ID	Start Time	Calling Party	Calling Party Name	Dialed Number	Callee Name	Ring Duration	Talk Duration	Direction	Reason	Answered By Ext	Answered By Name	Queue	DID
+C1001	2026/05/17 08:02:15	+14155550101	Alice Johnson	101		4	312	inbound	answered	101	Bob Smith	Sales	+18005550001
+C1002	2026/05/17 08:10:44	+14155550102	Carol Davis	102		6	456	inbound	answered	102	Mike Chen	Support	+18005550002
+C1003	2026/05/17 08:15:30	101	Bob Smith	+14155550201		3	0	outbound	no answer	101	Bob Smith		
+C1004	2026/05/17 08:22:01	+14155550103	Tom Brown	103		8	278	inbound	answered	103	Sara Lee	Sales	+18005550001
+C1005	2026/05/17 08:31:55	+14155550104	Eve Wilson	102		12	0	inbound	no answer			Support	+18005550002
+C1006	2026/05/17 08:45:10	102	Mike Chen	+14155550202		2	540	outbound	answered	102	Mike Chen		
+C1007	2026/05/17 09:00:22	+14155550105	Frank Garcia	101		5	189	inbound	answered	101	Bob Smith	Sales	+18005550001
+C1008	2026/05/17 09:08:47	103	Sara Lee	+14155550203		1	360	outbound	answered	103	Sara Lee		
+C1009	2026/05/17 09:15:00	+14155550106	Grace Kim	104		7	0	inbound	no answer			Support	+18005550002
+C1010	2026/05/17 09:22:33	+14155550107	Henry Park	102		3	425	inbound	answered	102	Mike Chen	Support	+18005550002
+C1011	2026/05/17 09:35:18	104	James Liu	+14155550204		4	290	outbound	answered	104	James Liu		
+C1012	2026/05/17 09:41:09	+14155550108	Iris Tan	101		6	510	inbound	answered	101	Bob Smith	Sales	+18005550001
+C1013	2026/05/17 09:55:40	+14155550109	Jack Ng	103		15	0	inbound	busy			Sales	+18005550001
+C1014	2026/05/17 10:02:55	101	Bob Smith	+14155550205		2	630	outbound	answered	101	Bob Smith		
+C1015	2026/05/17 10:11:30	+14155550110	Karen Wu	104		4	198	inbound	answered	104	James Liu	Support	+18005550002
+C1016	2026/05/17 10:22:14	102	Mike Chen	+14155550206		3	0	outbound	no answer	102	Mike Chen		
+C1017	2026/05/17 10:30:05	+14155550111	Leo Zhang	101		5	344	inbound	answered	101	Bob Smith	Sales	+18005550001
+C1018	2026/05/17 10:44:22	103	Sara Lee	+14155550207		2	480	outbound	answered	103	Sara Lee		
+C1019	2026/05/17 10:55:50	+14155550112	Mia Patel	102		9	0	inbound	no answer			Support	+18005550002
+C1020	2026/05/17 11:02:33	+14155550113	Noah Adams	103		3	260	inbound	answered	103	Sara Lee	Sales	+18005550001
+C1021	2026/05/17 11:14:19	104	James Liu	+14155550208		1	720	outbound	answered	104	James Liu		
+C1022	2026/05/17 11:25:45	+14155550114	Olivia Scott	101		6	390	inbound	answered	101	Bob Smith	Sales	+18005550001
+C1023	2026/05/17 11:38:00	+14155550115	Peter Hall	102		4	155	inbound	answered	102	Mike Chen	Support	+18005550002
+C1024	2026/05/17 11:50:12	101	Bob Smith	+14155550209		3	410	outbound	answered	101	Bob Smith		
+C1025	2026/05/17 12:00:44	+14155550116	Quinn Baker	103		8	0	inbound	no answer			Sales	+18005550001
+C1026	2026/05/17 12:10:29	102	Mike Chen	+14155550210		2	530	outbound	answered	102	Mike Chen		
+C1027	2026/05/17 12:22:57	+14155550117	Rachel Young	104		5	240	inbound	answered	104	James Liu	Support	+18005550002
+C1028	2026/05/17 12:35:11	+14155550118	Sam King	101		7	0	inbound	busy			Sales	+18005550001
+C1029	2026/05/17 12:46:30	103	Sara Lee	+14155550211		1	380	outbound	answered	103	Sara Lee		
+C1030	2026/05/17 13:00:05	+14155550119	Tina Wright	102		4	290	inbound	answered	102	Mike Chen	Support	+18005550002
+C1031	2026/05/17 13:12:44	+14155550120	Umar Lopez	101		6	465	inbound	answered	101	Bob Smith	Sales	+18005550001
+C1032	2026/05/17 13:25:18	104	James Liu	+14155550212		3	600	outbound	answered	104	James Liu		
+C1033	2026/05/17 13:38:09	+14155550121	Vera Hill	103		5	180	inbound	answered	103	Sara Lee	Sales	+18005550001
+C1034	2026/05/17 13:50:55	+14155550122	Will Green	102		10	0	inbound	no answer			Support	+18005550002
+C1035	2026/05/17 14:02:33	101	Bob Smith	+14155550213		2	315	outbound	answered	101	Bob Smith		
+C1036	2026/05/17 14:15:20	+14155550123	Xena Torres	104		4	420	inbound	answered	104	James Liu	Support	+18005550002
+C1037	2026/05/17 14:28:47	102	Mike Chen	+14155550214		3	570	outbound	answered	102	Mike Chen		
+C1038	2026/05/17 14:42:05	+14155550124	Yusuf Flores	101		6	235	inbound	answered	101	Bob Smith	Sales	+18005550001
+C1039	2026/05/17 14:55:30	+14155550125	Zoe Barnes	103		8	0	inbound	no answer			Sales	+18005550001
+C1040	2026/05/17 15:10:12	103	Sara Lee	+14155550215		2	490	outbound	answered	103	Sara Lee		
+C1041	2026/05/17 15:22:48	+14155550126	Aaron Cole	102		5	310	inbound	answered	102	Mike Chen	Support	+18005550002
+C1042	2026/05/17 15:35:07	104	James Liu	+14155550216		1	540	outbound	answered	104	James Liu		
+C1043	2026/05/17 15:48:44	+14155550127	Beth Perry	101		7	270	inbound	answered	101	Bob Smith	Sales	+18005550001
+C1044	2026/05/17 16:00:22	+14155550128	Chris Morgan	102		4	395	inbound	answered	102	Mike Chen	Support	+18005550002
+C1045	2026/05/17 16:12:58	101	Bob Smith	+14155550217		3	460	outbound	answered	101	Bob Smith		
+C1046	2026/05/17 16:25:33	+14155550129	Diana Reed	103		9	0	inbound	no answer			Sales	+18005550001
+C1047	2026/05/17 16:38:15	104	James Liu	+14155550218		2	380	outbound	answered	104	James Liu		
